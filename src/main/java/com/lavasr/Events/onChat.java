@@ -16,7 +16,7 @@ public class onChat implements Listener {
     @EventHandler(ignoreCancelled = true, priority = EventPriority.HIGHEST)
     public void onChatHigh(AsyncChatEvent e){
         String rawChatMessage = LegacyComponentSerializer.legacySection().serialize(e.message());
-    Component highlight = Filter.getBlockedHighlightMessage(rawChatMessage);
+        Component highlight = Filter.getBlockedHighlightMessage(rawChatMessage);
         if (highlight != null) {
             Filter.BlacklistEntry matched = Filter.getMatchedEntry(rawChatMessage);
             if (matched != null && matched.autoBan()) {
@@ -27,7 +27,7 @@ public class onChat implements Listener {
                 });
             }
             e.setCancelled(true);
-            Bukkit.broadcast(Colorize("<main><bold>(Filtered) <reset><accent>" + e.getPlayer().getName() + "<main>: ").append(highlight), "core403.filter.notify");
+            Bukkit.broadcast(Colorize("<main><bold>(Filtered) <reset><accent>" + e.getPlayer().getName() + "<main>: ").append(highlight), "filter.notify");
             e.getPlayer().sendMessage(Colorize("<prefix>Your message was blocked due to the following characters: ").append(highlight));
         }
     }

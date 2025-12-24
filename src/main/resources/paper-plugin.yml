@@ -17,3 +17,12 @@ permissions:
   filter.reload:
     description: Allows the user to reload the filter configuration.
     default: op
+  filter.use:
+    description: Allows the user the basic filter management command
+    default: op
+  filter.notify:
+    description: Allows the user to receive notifications about filtered messages.
+    default: true
+  filter.check:
+    description: Allows the user to checked if a string would be caught by the filter.
+    default: true
