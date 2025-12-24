@@ -1,0 +1,19 @@
+name: ChatFilter
+version: '1.0'
+main: com.lavasr.ChatFilter
+api-version: '1.21'
+author: 403Denied
+
+permissions:
+  filter.add:
+    description: Allows the user to add words to the filter.
+    default: op
+  filter.remove:
+    description: Allows the user to remove words from the filter.
+    default: op
+  filter.list:
+    description: Allows the user to list all filtered words.
+    default: op
+  filter.reload:
+    description: Allows the user to reload the filter configuration.
+    default: op
